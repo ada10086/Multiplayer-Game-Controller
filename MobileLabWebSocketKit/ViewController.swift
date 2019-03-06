@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  mobile-lab-websockets
-//
-//  Created by Sebastian Buys on 2/20/18.
-//  Copyright © 2018 Sebastian Buys. All rights reserved.
-//
 
 import UIKit
 import Starscream    // Socket library
@@ -31,6 +24,7 @@ let playerIdKey = "PLAYER_ID";
 class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate, JoystickViewDelegate {
     
     @IBOutlet weak var myJoystick: JoystickView!
+    @IBOutlet weak var messageLabel: UILabel!
     
 
     // User UserDefaults for simple storage.
@@ -38,31 +32,15 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate, 
     
     // Object for managing the web socket.
     var socket: WebSocket?
-    
 
-//    // Button actions connected from storyboard.
-//    @IBAction func didTapUp(_ sender: UIButton) {
-//        sendDirectionMessage(.up)
-//    }
-//
-//    @IBAction func didTapRight(_ sender: UIButton) {
-//        sendDirectionMessage(.right)
-//    }
-//
-//    @IBAction func didTapDown(_ sender: UIButton) {
-//        sendDirectionMessage(.down)
-//    }
-//
-//    @IBAction func didTapLeft(_ sender: UIButton) {
-//        sendDirectionMessage(.left)
-//    }
     
     // Input text field.
     @IBOutlet weak var playerIdTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        messageLabel.text = "Ready?"
+
         
         //Assign JoystickView delegate to self
         myJoystick.form = .around
@@ -133,6 +111,7 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate, 
     // WebSocket delegate methods
     func websocketDidConnect(socket: WebSocketClient) {
         print("✅ Connected")
+        messageLabel.text = "Go!!!!!"
     }
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
@@ -182,7 +161,7 @@ class ViewController: UIViewController, WebSocketDelegate, UITextFieldDelegate, 
     
     //functions come with JoystickViewDelegate
     func joystickView(_ joystickView: JoystickView, didMoveto x: Float, y: Float, direction: JoystickMoveDriection) {
-        print("myJoystick move to x:\(x) y:\(y) direction:\(direction.rawValue)")
+//        print("myJoystick move to x:\(x) y:\(y) direction:\(direction.rawValue)")
         if direction.rawValue == 1 {
             sendDirectionMessage(.up)
         } else if direction.rawValue == 2 {

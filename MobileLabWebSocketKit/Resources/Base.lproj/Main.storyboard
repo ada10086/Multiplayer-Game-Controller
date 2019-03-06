@@ -18,15 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bg1.png" translatesAutoresizingMaskIntoConstraints="NO" id="lil-Ll-4rp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="667" id="81r-rq-dlw"/>
+                                    <constraint firstAttribute="width" constant="375" id="mr1-Up-GcG"/>
+                                </constraints>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="player id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abH-TG-gQi">
-                                <rect key="frame" x="16" y="36" width="343" height="36"/>
+                                <rect key="frame" x="16" y="95.5" width="343" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="FhS-Dc-RAZ"/>
+                                    <constraint firstAttribute="height" constant="36" id="TbI-ma-5uG"/>
+                                </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxi-W5-16R" customClass="JoystickView" customModule="JoystickView">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <rect key="frame" x="37.5" y="233.5" width="300" height="300"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jSubstrate.png" translatesAutoresizingMaskIntoConstraints="NO" id="QjC-40-eCt">
                                         <rect key="frame" x="25" y="25" width="250" height="250"/>
@@ -43,7 +54,6 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="GE0-JM-Os5"/>
                                     <constraint firstItem="QjC-40-eCt" firstAttribute="centerX" secondItem="Cxi-W5-16R" secondAttribute="centerX" id="W22-PK-fBw"/>
@@ -57,18 +67,43 @@
                                     <outlet property="joystickThumb" destination="EEO-qW-tWZ" id="tOi-PK-tWl"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-kT-NKB">
+                                <rect key="frame" x="117.5" y="25" width="140" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="SNh-Fg-5DT"/>
+                                    <constraint firstAttribute="height" constant="57" id="nJH-As-oSl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-Nx-wmI">
+                                <rect key="frame" x="109" y="155" width="157" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="5ze-hb-a0j"/>
+                                    <constraint firstAttribute="width" constant="157" id="Z8Z-Ej-Vqb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Cxi-W5-16R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4pi-Vg-wzT"/>
+                            <constraint firstItem="abH-TG-gQi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3nP-ay-ddj"/>
+                            <constraint firstItem="Cxi-W5-16R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="4pi-Vg-wzT"/>
+                            <constraint firstItem="jmf-kT-NKB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-280" id="5Ve-Nm-bVc"/>
                             <constraint firstItem="Cxi-W5-16R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ey-4e-I9i"/>
+                            <constraint firstItem="XB2-Nx-wmI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="JnK-Ne-9Zw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="abH-TG-gQi" secondAttribute="trailing" constant="16" id="M53-ab-mei"/>
-                            <constraint firstItem="abH-TG-gQi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tnu-GS-cld"/>
-                            <constraint firstItem="abH-TG-gQi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="xS2-1y-MQC"/>
+                            <constraint firstItem="jmf-kT-NKB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bwf-9O-ho1"/>
+                            <constraint firstItem="XB2-Nx-wmI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c7J-xb-Omf"/>
+                            <constraint firstItem="abH-TG-gQi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-220" id="hhF-gj-DNZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="XB2-Nx-wmI" id="sp4-ZB-FNF"/>
                         <outlet property="myJoystick" destination="Cxi-W5-16R" id="n65-kg-JYs"/>
                         <outlet property="playerIdTextField" destination="abH-TG-gQi" id="lmJ-G8-azj"/>
                     </connections>
@@ -79,6 +114,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg1.png" width="712" height="1376"/>
         <image name="jStick.png" width="42" height="42"/>
         <image name="jSubstrate.png" width="90" height="90"/>
     </resources>
