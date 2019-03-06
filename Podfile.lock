@@ -1,0 +1,20 @@
+PODS:
+  - JoystickView (1.0.0)
+  - Starscream (3.0.6)
+
+DEPENDENCIES:
+  - JoystickView
+  - Starscream (= 3.0.6)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JoystickView
+    - Starscream
+
+SPEC CHECKSUMS:
+  JoystickView: b8f1b5b20f1279aa417bdb3f95aeb42e2d8bb15d
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+
+PODFILE CHECKSUM: 890219961561889b85a59c6a31956bd06bd5f428
+
+COCOAPODS: 1.6.1
